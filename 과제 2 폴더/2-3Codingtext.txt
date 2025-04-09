@@ -1,0 +1,42 @@
+#include <string>
+#include <vector>
+#include <algorithm> 
+
+using namespace std;
+
+int solution(int a, int b, int c, int d) {;
+    int q = 0;
+    int r = 0;
+    int dice[7] = {0};
+    dice[a]++; dice[b]++; dice[c]++; dice[d]++;
+    
+    for (int i = 1; i<=6; i++){
+        if(dice[i] == 4 ){
+            return 1111 *i;
+        }
+        if(dice[i] == 3){
+            for(int j=1; j<=6; j++){
+                if((dice[j] == 1) && (j != i)){
+                    return (10*i+j)*(10*i+j);
+                }
+            }
+        }
+        if(dice[i] == 2){
+            for(int j=1; j<=6; j++){
+                if((dice[j] == 2) && (j != i)){
+                    return (i + j) * abs(i-j);
+                }
+            }
+        }
+        if(dice[i] ==2){
+            for(int k = 1; k<= 6; k++){
+                if(dice[k] == 1 ){
+                    if(q == 0) q = k;
+                    else r = k;
+                    }
+                }
+                return q*r;
+            }
+    }
+    return min({a,b,c,d});
+}
