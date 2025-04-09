@@ -382,7 +382,7 @@ void CMFCnewDlg::DrawRandom()
 		int x = (rand() % (imgWidth - 2 * m_Radius)) + m_Radius;
 		int y = (rand() % (imgHeight - 2 * m_Radius)) + m_Radius;
 
-		m_clickPoints[i] = CPoint(x, y + 40);// y 40 시작 화면 반영
+		m_clickPoints[i] = CPoint(x + 10, y + 50);// y 40 시작 화면 반영
 
 		drawCircle(fm, x, y, m_Radius, 0 + (i * 70)); //몇번째 원인지 알기위해서 색깔 변화
 	}
