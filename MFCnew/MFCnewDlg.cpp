@@ -355,6 +355,7 @@ void CMFCnewDlg::DrawRandomCircles()
 
 void CMFCnewDlg::DrawRandom()
 {
+	//렌덤으로 원 그릴시 작은 원의 drawCircle 좌표가 살짝 뒤틀리는거 같습니다 원래 원이 있어야할 위치의 좌표에 클릭하면 드래그 가능합니다
 	if (m_nCircleCount == 0)
 		return;
 
@@ -364,14 +365,14 @@ void CMFCnewDlg::DrawRandom()
 	int imgWidth = m_image.GetWidth();
 	int imgHeight = m_image.GetHeight();
 
-	CRect rect(0, 30, imgWidth, imgHeight);
-	CRect rt[4];
-	for (int k = 0; k < 4; k++) {
-		rt[k] = rect;
-		int offsetX = (k % 2) * (imgWidth / 2);
-		int offsetY = (k / 2) * (imgHeight / 2);
-		rt[k].OffsetRect(offsetX, offsetY);
-	}
+	//CRect rect(0, 30, imgWidth, imgHeight);
+	//CRect rt[4];
+	//for (int k = 0; k < 4; k++) {
+	//	rt[k] = rect;
+	//	int offsetX = (k % 2) * (imgWidth / 2);
+	//	int offsetY = (k / 2) * (imgHeight / 2);
+	//	rt[k].OffsetRect(offsetX, offsetY);
+	//}
 
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 	srand(seed); // seed 매번 다르게
